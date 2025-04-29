@@ -227,8 +227,7 @@ Since the estimation is based on some stored information, for the sake of memory
 }
 ```
 
-::: {.callout-note}
-The above reference contains a detailed description of the algorithm together with an extensive comparison with the best available alternatives. It also explain the general targeted scope of the module that mainly focus on extracting high derivatives from noisy time-series in the aim of building learning datasets that contains *virtual sensor*-like columns representing derivatives of different orders of the raw columned coming from the ground measurements. 
-:::
+> The above reference contains a detailed description of the algorithm together with an extensive comparison with the best available alternatives. It also explain the general targeted scope of the module that mainly focus on extracting high derivatives from noisy time-series in the aim of building learning datasets that contains *virtual sensor*-like columns representing derivatives of different orders of the raw columned coming from the ground measurements. 
+
 
 [^1]: Should be available in May 2025.
