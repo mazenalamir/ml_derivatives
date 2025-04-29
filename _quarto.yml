@@ -1,0 +1,34 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "ml_derivatives"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: index.qmd#problem
+        text: "Problem"
+      - href: index.qmd#generation
+        text: "Signals generation"
+      - href: index.qmd#derivate
+        text: "Computing derivatives"
+      - href: index.qmd#example
+        text: "Example"
+      - href: index.qmd#limitations
+        text: "Limitations"
+      - href: index.qmd#citing
+        text: "Cite ML-derivatives"
+
+# flatly, sketchy, pulse, sandstone, spacelab
+# superhero, united, yeti
+format:
+  html:
+    theme: flatly
+    css: styles.css
+    toc: true
+
+
+
+
