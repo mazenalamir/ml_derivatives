@@ -11,7 +11,7 @@ Two appealing features of the modules are:
    
 1. **Computation of confidence intervals**:  
 
-    the `ml_derviatives` module provides (optionally) an estimation of an interval of confidence to which belong the true values of the derivatives with high probabiliy. This might be of great value when the estimated derivatives are extracted to build a model involving the high derivatives. Indeed, regions where the confidence interval is large might be de-selected in order to be excluded from the so-called *training dataset*.
+the `ml_derviatives` module provides (optionally) an estimation of an interval of confidence to which belong the true values of the derivatives with high probabiliy. This might be of great value when the estimated derivatives are extracted to build a model involving the high derivatives. Indeed, regions where the confidence interval is large might be de-selected in order to be excluded from the so-called *training dataset*.
 
 ## Typical comparison with existing alternatives 
 
@@ -98,16 +98,15 @@ Table: Input arguments for the `derivate` method of the class `ml_derivatives` m
 
 The `derivate` method of the `ml_derivatives` module returns a tuple, say `output` with the following meanings
 
-:::{.tbl-caption}
+
 | **parameters** | **Description** |
 |---|----------------|
 | `output[0]`| The estimated derivatives of order `d` where `d` is the derivation order used in the call of the method.|
 | `output[1]` | The sequence of confidence interval associated to the estimation. |
 | `output[2]` | A dictionary representing the statistics of errors on the $0$-derivative estimation. This is produced only if the `assess` input argument is set to `True`otherwise `output[2]=None` is returned. |
 
-
 Table: Output arguments for the `derivate` method of the class `ml_derivatives` module.
-:::
+
 
 ## Examples of use {#example}
 
