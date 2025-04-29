@@ -193,18 +193,17 @@ As the derivatives estimator involves an estimation of the bandwidth of the sign
 ### Maximum bandwidth for a given `dt`
 
 Obviously, given the acquisition period `dt`, there is a limitation on the bandwidth of the signal for which derivatives can be computed. For this reason, it is not advisable to attempt estimation beyond the following maximum pulsation: 
+
 $$
 \omega_\text{max}= \dfrac{2\pi}{5\times \texttt{dt}}
 $$
 
-:::
-
-::: {.callout-warning title="`ml_derivatives` is slower than standard filters although incomparatively more precise"} 
+### `ml_derivatives` is slower than standard filters although incomparatively more precise
 
 It is important to underline that the counterpart of the above nice features is that the processing time is not that of a point-wise filter although computation time remains descently small. See below for more details regarding standard compuation times using the `ml_derivatives` module. 
-:::
 
-::: {.callout-warning title='The length of the time-series is limited to 10000'}
+
+### The length of the time-series is limited to 10000
 
 Since the estimation is based on some stored information, for the sake of memory, the length of the sequence `yn` used as input argument in (@eq-problem) is limited to 10000. If estimation of derivatives for longer sequence is required, please decompose the signal into multiple segments. 
 :::
