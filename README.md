@@ -190,7 +190,7 @@ which produces the following result:
 As the derivatives estimator involves an estimation of the bandwidth of the signal and since the precision of this estimation is inversly proportional to the number of points, the current implementation of the module required a minimum number od points `N`=50.
 
 
-::: {.callout-warning title="Maximum bandwidth for a given `dt`."} 
+### Maximum bandwidth for a given `dt`
 
 Obviously, given the acquisition period `dt`, there is a limitation on the bandwidth of the signal for which derivatives can be computed. For this reason, it is not advisable to attempt estimation beyond the following maximum pulsation: 
 $$
