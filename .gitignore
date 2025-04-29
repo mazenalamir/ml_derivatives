@@ -25,3 +25,4 @@ renv/
 
 # Ignore system files
 Thumbs.db
+/.quarto/

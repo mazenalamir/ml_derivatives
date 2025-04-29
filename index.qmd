@@ -98,6 +98,7 @@ der = Derivator()
 t, Y = der.generate_a_time_series(nt, omega, dt)
 
 # Add the desired amount of noise to the signal.
+# Remember that the generated time series Y[0] is normalized
 
 noise_level = 0.05
 yn = noise_level * np.random.randn(len(Y[0])) + Y[0]

@@ -386,9 +386,10 @@ Note
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>t, Y <span class="op">=</span> der.generate_a_time_series(nt, omega, dt)</span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the desired amount of noise to the signal.</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>noise_level <span class="op">=</span> <span class="fl">0.05</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>yn <span class="op">=</span> noise_level <span class="op">*</span> np.random.randn(<span class="bu">len</span>(Y[<span class="dv">0</span>])) <span class="op">+</span> Y[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Remember that the generated time series Y[0] is normalized</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>noise_level <span class="op">=</span> <span class="fl">0.05</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>yn <span class="op">=</span> noise_level <span class="op">*</span> np.random.randn(<span class="bu">len</span>(Y[<span class="dv">0</span>])) <span class="op">+</span> Y[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Notice that the outputs of the <code>generate_time_series</code> method of the <code>Derivator</code>class are the time vector <code>t</code> and a list <code>Y</code> of five time-series representing the successive derivatives of the signal. More precisely:</p>
 <ul>
 <li><p><code>Y[0]</code> is the noise free signal to which the noise is to be added. Notice that this time series is always normalized so that its maximum value is lower than 1.0.</p></li>
