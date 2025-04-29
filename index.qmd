@@ -59,7 +59,7 @@ Here, Only the main elements are briefly explained for an easy and quick use of 
 The package will be made available soon through the standard installation script[^1]:
 
 ```default
-pip install ml_derivatives
+pip install ml-derivatives
 ```
 
 ## Problem statement {#problem}
