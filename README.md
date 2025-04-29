@@ -178,9 +178,9 @@ print("--------------------------------------------------------------")
 
 which produces the following result: 
 
-![Relevance of the confidence intervals](images/outputterminal.png){fig-align="left" width="80%"}
-
-which means for instance that **more than 98%** of the instants, the true values of the third derivatives lies inside the $2\sigma$-defined confidence interval. 
+- 82% of the true values lie inside the $\sigma$-confidence interval
+- 98% of the true values lie inside the $2\sigma$-confidence interval
+- 99% of the true values lie inside the $3\sigma$-confidence interval 
 
 
 ## Limitations {#limitations}
