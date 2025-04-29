@@ -185,11 +185,9 @@ which produces the following result:
 
 ## Limitations 
 
-::: {.callout-warning title="Minimum number of `N`=50 points required."} 
+### Minimum number of `N`=50 points required
 
 As the derivatives estimator involves an estimation of the bandwidth of the signal and since the precision of this estimation is inversly proportional to the number of points, the current implementation of the module required a minimum number od points `N`=50.
-
-:::
 
 
 ::: {.callout-warning title="Maximum bandwidth for a given `dt`."} 
