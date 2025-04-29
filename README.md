@@ -81,7 +81,6 @@ The main method that is exported by the `ml_derivatives` module is the `derivate
 ### Input arguments 
 The table below describes the input arguments of the `derivate` method.
 
-:::{.tbl-caption}
 | **Parameter**     | **Description**      | **Default**|
 |---|---------------|----:|
 | `y` |  The noisy time-series to be differentitated to the order `d`. This should be a `numpy` array.| --|
@@ -93,7 +92,7 @@ The table below describes the input arguments of the `derivate` method.
 | `mute_warnings`| A boolean option which, when set to `True`, Suppresses the printing of some warning messages that are not necessarily useful in production although they can be informative in the preparation phase. | `True` |
 
 Table: Input arguments for the `derivate` method of the class `ml_derivatives` module.
-:::
+
 
 ### Output arguments 
 
