@@ -29,20 +29,15 @@ The package will be made available soon through the standard installation script
 pip install ml_derivatives
 ```
 
-## Problem statement {#problem}
-Given a sequence `yn` of `N` values representing successive noisy measurements of of a physical signal `y`which is acquired using  **fixed acquisition period** `dt` over the time interval $I$. We want to compute an estimation of the `d`-th derivative of the underlying signal over the same time interval through a python call of the following form:  
+## Problem statement 
+Given a sequence `yn` of `N` values representing successive noisy measurements of of a physical signal `y`which is acquired using  **fixed acquisition period** `dt` over the time interval $I$. We want to compute an estimation of the `d`-th derivative of the underlying signal over the same time interval. In the current implementation, $d\in \{0,1,2,3,4\}$. The case with $d=0$ corresponds to a denoising task (filtering). 
 
-$\dfrac{d^d}{dt^d}\Bigl[y\Bigr]\Biggl\vert_I = \texttt{estimate\_derivative(yn, dt, d, ...)}$
-
-In the current implementation, $d\in \{0,1,2,3,4\}$. The case with $d=0$ corresponds to a denoising task (filtering). 
-
-## Generating time-series with exact high derivatives {#generation}
+## Generating time-series with exact high derivatives
 
 In order to start getting hands-on the main call that addresses the above described problem, the `ml_derivatives` provides a handy function that enables to generate a time series with prescribed bandwidth, length and sampling period, so that one can start testing the performance of the derivatives estimator. 
 
-::: {.callout-note}
-If you already have your time-series, this step would be unnecessary although it is always advisable to use this facility to get *checkable* results before being confident with the module. Indeed, having your own noisy signal, it is generally difficult to get the ground truth regarding the higher dervatives of the time-series. 
-:::
+
+> If you already have your time-series, this step would be unnecessary although it is always advisable to use this facility to get *checkable* results before being confident with the module. Indeed, having your own noisy signal, it is generally difficult to get the ground truth regarding the higher dervatives of the time-series. 
 
 This is done using the method `generate_time_series` of the `Derivator` class of the module as shown in the python script below. 
 
@@ -77,56 +72,7 @@ Notice that the outputs of the `generate_time_series` method of the `Derivator`c
 
 Notice that these derivatives have to be estimated from the noisy version of the signal, namely `yn` that is computed in the last line of the above script. 
 
-::: {.callout-tip}
-Notice how we separate the generation of the noise-free time-series  from the process of adding noise. This enables to check several noise levels for the same time-series. This is because there is a randomness character inside the `generate_time_series` method of the `Derivator` class.
-:::
-
-The plotting python code and the resulting time series are shown in the following tabs.
-
-::: {.panel-tabset}
-
-### Plotting code.
-
-```python
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-
-# prepare the plot 
-fig = make_subplots(
-        rows=5, 
-        cols=1,
-        subplot_titles=([f"{i}-order derivatives" for i in range(5)]), 
-        )
-
-# iterate over the derivatives and plot the time-series
-for i in range(5):
-    if i == 0:
-            fig.add_trace(go.Scatter(x=t, y=yn, mode='lines', 
-                                    line=dict(color='Black'), 
-                                    opacity=0.8), row=i+1, col=1)
-    fig.add_trace(go.Scatter(x=t, y=Y[i]), row=i+1, col=1)
-
-# unify the x-axis zoom and set the sizes
-fig.update_layout(
-    showlegend=False,
-    width=800,
-    height=1200,
-    xaxis2=dict(matches='x'),
-    xaxis3=dict(matches='x'),
-    xaxis4=dict(matches='x'),
-    xaxis5=dict(matches='x')
-)
-```
-
-### The plots 
-
-Notice that the first subplot shows both the noise-free and the noisy version of the time-series to be differentiated. (*The plots are zoomable*). 
-
-:::{.embed}
-<iframe src="images/generated_plots.html" width="1400" height="800"></iframe>
-:::
-
-:::
+> Notice how we separate the generation of the noise-free time-series  from the process of adding noise. This enables to check several noise levels for the same time-series. This is because there is a randomness character inside the `generate_time_series` method of the `Derivator` class.
 
 ## Computing the derivatives via the `derivate` method {#derivate}
 
@@ -201,43 +147,13 @@ fig.update_layout(
 fig.write_html(f'example_{int(100 * noise)}.html')
 ```
 
-The resulting plots are shown in the tabls below: 
-
-::: {.panel-tabset}
-
-### level noise = 0.02
-
-:::{.embed}
-<iframe src="images/example_2.html" width="1400" height="800"></iframe>
-:::
-
-### level noise = 0.04
-
-:::{.embed}
-<iframe src="images/example_4.html" width="1400" height="800"></iframe>
-:::
-
-### level noise = 0.05
-
-:::{.embed}
-<iframe src="images/example_5.html" width="1400" height="800"></iframe>
-:::
-
-### level noise = 0.07
-
-:::{.embed}
-<iframe src="images/example_7.html" width="1400" height="800"></iframe>
-:::
-
-:::
-
 ### Use the confidence intervals provided 
 
 The confidence interval is to be used as if was an indication avout the standard deviation that is defined *point-wise* along the time interval over which the estimation of the derivative is conducted. Based on this, it is common to use as confidence intervals around the estimation that show a width of **mutiples** of the standard deviation. This takes the following form:
 
 $$
 [y_\text{prediced}-\rho\sigma, y_\text{prediced}+\rho\sigma]\quad \rho=1,2,3
-$${#eq-sigma}
+$$
 
 The following script shows how the estimation of $\sigma$ can be used and computes for a noisy signal the **probability** of the true value being inside the above defined interval for different values of $\rho\in \{1,2,3\}$. The thrid derivatice is used for the sake of illustration together with a noise level of 0.05. 
 
