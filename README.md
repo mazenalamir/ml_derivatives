@@ -1,15 +1,3 @@
----
-title: "ML_derivatives"
-subtitle: "A module to compute high derivatives of noisy time-series."
-author: 
-    - name: "Mazen Alamir"
-      affiliation:  "CNRS, University of Grenoble Alpes"
-      homepage: "https://www.mazenalamir.fr"
-date: April 25, 2025
-keywords: ["Signal preocessing", "derivatives estimation", "denoising", "Machine Learning", "Python"]
----
-
----
 `ml_derivatives` is a python module for the computation of high order derivatives (up to order 4 in the current implementation) despite relative noise to signal noise that might be as big as 7% or even 10%. 
 
 Two appealing features of the modules are: 
