@@ -1,0 +1,27 @@
+# Ignore Quarto cache and backup files
+_quarto/
+*.ipynb-checkpoints
+*.Rproj.user
+*.Rhistory
+*.RData
+*.DS_Store
+
+# If you don't want to commit the quarto lock file
+# quarto.lock
+
+# If you build locally to something like _site/ accidentally
+_site/
+
+# Python virtual environments
+.venv/
+env/
+venv/
+
+# R virtual environments
+renv/
+
+# VSCode settings (optional)
+.vscode/
+
+# Ignore system files
+Thumbs.db
