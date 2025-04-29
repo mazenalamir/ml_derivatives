@@ -74,7 +74,7 @@ Notice that these derivatives have to be estimated from the noisy version of the
 
 > Notice how we separate the generation of the noise-free time-series  from the process of adding noise. This enables to check several noise levels for the same time-series. This is because there is a randomness character inside the `generate_time_series` method of the `Derivator` class.
 
-## Computing the derivatives via the `derivate` method {#derivate}
+## Computing the derivatives via the `derivate` method 
 
 The main method that is exported by the `ml_derivatives` module is the `derivate` that is described in the present section. 
 
@@ -108,7 +108,7 @@ The `derivate` method of the `ml_derivatives` module returns a tuple, say `outpu
 Table: Output arguments for the `derivate` method of the class `ml_derivatives` module.
 
 
-## Examples of use {#example}
+## Examples of use 
 
 ### Use the derivatives estimator 
 
@@ -183,7 +183,7 @@ which produces the following result:
 - 99% of the true values lie inside the $3\sigma$-confidence interval 
 
 
-## Limitations {#limitations}
+## Limitations 
 
 ::: {.callout-warning title="Minimum number of `N`=50 points required."} 
 
@@ -211,7 +211,7 @@ It is important to underline that the counterpart of the above nice features is 
 Since the estimation is based on some stored information, for the sake of memory, the length of the sequence `yn` used as input argument in (@eq-problem) is limited to 10000. If estimation of derivatives for longer sequence is required, please decompose the signal into multiple segments. 
 :::
 
-## Citing ml_derivatives {#citing}
+## Citing ml_derivatives 
 
 
 ```bibtex
