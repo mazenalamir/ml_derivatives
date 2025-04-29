@@ -205,8 +205,8 @@ It is important to underline that the counterpart of the above nice features is 
 
 ### The length of the time-series is limited to 10000
 
-Since the estimation is based on some stored information, for the sake of memory, the length of the sequence `yn` used as input argument in (@eq-problem) is limited to 10000. If estimation of derivatives for longer sequence is required, please decompose the signal into multiple segments. 
-:::
+Since the estimation is based on some stored information, for the sake of memory, the length of the sequence `yn` used when calling the `derivate`method is limited to 10000. If estimation of derivatives for longer sequence is required, please decompose the signal into multiple segments. 
+
 
 ## Citing ml_derivatives 
 
