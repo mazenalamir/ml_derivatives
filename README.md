@@ -1,3 +1,6 @@
+# ml_derivatives: 
+A python module for highr dervatives compuation from noisy time-series
+
 `ml_derivatives` is a python module for the computation of high order derivatives (up to order 4 in the current implementation) despite relative noise to signal noise that might be as big as 7% or even 10%. 
 
 Two appealing features of the modules are: 
@@ -10,33 +13,9 @@ Two appealing features of the modules are:
 
     the `ml_derviatives` module provides (optionally) an estimation of an interval of confidence to which belong the true values of the derivatives with high probabiliy. This might be of great value when the estimated derivatives are extracted to build a model involving the high derivatives. Indeed, regions where the confidence interval is large might be de-selected in order to be excluded from the so-called *training dataset*.
 
-::: {.callout-tip collapse="true" title='Tipycal comparison results with available alternatives (unfold to see)'}
+## Typical comparison with existing alternatives 
 
-![Typical comparison results with available alternatives](images/comparison.png){fig-align="center" width="80%"}
-
-:::
-
-::: {.callout-tip collapse="true" title='Example of derivatives reconstruction with confidence intervals'}
-
-::: {.panel-tabset}
-
-### Noise 5% / 1.94Hz
-
-
-![Example of derivatives reconstruction with confidence intervals](images/derivatives_reconstruction_1.png){fig-align="center" width="80%"}
-
-
-### Noise 5% / 12.54Hz
-
-![Example of derivatives reconstruction with confidence intervals](images/derivatives_reconstruction_2.png){fig-align="center" width="80%"}
-
-### Noise 10% / 4.22Hz
-
-![Example of derivatives reconstruction with confidence intervals](images/derivatives_reconstruction_3.png){fig-align="center" width="80%"}
-
-:::
-
-:::
+![Typical comparison results with available alternatives](images/comparison.png)
 
 For a complete description of the algorithm, see the reference paper [cited below](#citing)
 
@@ -53,9 +32,7 @@ pip install ml_derivatives
 ## Problem statement {#problem}
 Given a sequence `yn` of `N` values representing successive noisy measurements of of a physical signal `y`which is acquired using  **fixed acquisition period** `dt` over the time interval $I$. We want to compute an estimation of the `d`-th derivative of the underlying signal over the same time interval through a python call of the following form:  
 
-$$
-\dfrac{d^d}{dt^d}\Bigl[y\Bigr]\Biggl\vert_I = \texttt{estimate\_derivative(yn, dt, d, ...)}
-$${#eq-problem}
+$\dfrac{d^d}{dt^d}\Bigl[y\Bigr]\Biggl\vert_I = \texttt{estimate\_derivative(yn, dt, d, ...)}$
 
 In the current implementation, $d\in \{0,1,2,3,4\}$. The case with $d=0$ corresponds to a denoising task (filtering). 
 
