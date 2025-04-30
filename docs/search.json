@@ -11,7 +11,7 @@
     "href": "index.html#installation",
     "title": "ML_derivatives",
     "section": "Installation",
-    "text": "Installation\nThe package will be made available soon through the standard installation script1:\npip install ml-derivatives"
+    "text": "Installation\nThe package will be made available soon through the standard installation script1:\npip install ml_derivatives"
   },
   {
     "objectID": "index.html#problem",
