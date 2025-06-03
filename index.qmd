@@ -173,7 +173,7 @@ The table below describes the input arguments of the `derivate` method.
 :::{.tbl-caption}
 | **Parameter**     | **Description**      | **Default**|
 |---|---------------|----:|
-| `y` |  The noisy time-series to be differentitated to the order `d`. This should be a `numpy` array.| --|
+| `y` |  The noisy time-series to be differentitated to the order `d`. This should be a `numpy` array. Notice that this sequence should be normalized so that the maximum absolute value is lower that 1.0 (approximately outliers excluded)| --|
 | `d`| Integer inside [0,1,2,3,4] representing the derivation order to be computed. Notice that the method for computing the derivation order `d` is not based on the computation of the lower order derivatives. | -- |
 | `dt`| The sampling acquisition period that should be a `float` scalar number. | -- |
 | `fit_before`| A boolean option instructing the algorithm to first evaluate the bandwidth of the time-series `y` or not before computing the derivatives. **Upon the first call, the fit is necessarily done**. For the next evaluation, the option is made available and set to `False` by default for computational efficiency reasons. The rationale is to avoid the bandwidth evaluation if the user thinks that the outcome of the first evaluation is still relevant. Swith it to `True`only if changes in the bandwidth is expected compared to the previous fit. | `False` |
